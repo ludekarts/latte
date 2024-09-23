@@ -1,0 +1,23 @@
+{
+  "name": "latte",
+  "version": "1.0.0-rc.1",
+  "description": "Super-minimalistic testing framework to run in browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ludekarts/latte.git"
+  },
+  "keywords": [
+    "testing",
+    "js"
+  ],
+  "author": "Wojciech Ludwin, @ludekarts",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ludekarts/latte/issues"
+  },
+  "homepage": "https://github.com/ludekarts/latte#readme"
+}

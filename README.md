@@ -1,2 +1,3 @@
-# latte
-Super-minimalistic testing framework to run in browser 
+# Latte
+
+Super-minimalistic testing framework to run in browser
