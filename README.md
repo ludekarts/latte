@@ -26,7 +26,8 @@ describe("Sample tests", () => {
   it("Should fail", () => {
     expect(1).to.have.equal(2);
   });
-}
+
+});
 ```
 
 To run **only** one test case follw code below:

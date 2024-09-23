@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Chai Version</title>
+    <style>
+      code {
+        background-color: lightblue;
+        display: inline-block;
+        padding: 0 0.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Note📒: In orde to use <code>data-chai</code> attribute to load custom
+      chai version you need to use ones in ESM format.
+    </p>
+    <script
+      type="module"
+      src="../../index.js"
+      data-latte="./chai.test.js"
+      data-chai="https://cdnjs.cloudflare.com/ajax/libs/chai/5.0.0/chai.min.js"
+    ></script>
+  </body>
+</html>
