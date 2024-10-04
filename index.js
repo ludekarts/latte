@@ -44,11 +44,11 @@
   root.describe = describe;
 
   // Load Chai.js and script witch tests.
-  const scriptTag = document.querySelector("script[data-latte]");
+  const scriptTag = document.querySelector("script[data-latte-tests]");
 
   if (!scriptTag) {
     throw new Error(
-      "LatteError: Cannot find script tag with data-latte attribute"
+      "LatteError: Cannot find script tag with data-latte-tests attribute"
     );
   }
 
@@ -66,11 +66,11 @@
     window.expect = chai.expect;
   }
 
-  if (scriptTag.dataset.latte) {
-    await includeScriptTag(scriptTag.dataset.latte);
+  if (scriptTag.dataset.latteTests) {
+    await includeScriptTag(scriptTag.dataset.latteTests);
   } else {
     throw new Error(
-      "LatteError: Cannot find script tag with data-latte attribute"
+      "LatteError: Cannot find script tag with data-latte-tests attribute"
     );
   }
 

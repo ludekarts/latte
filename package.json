@@ -1,9 +1,10 @@
 {
   "name": "latte",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0",
   "description": "Super-minimalistic testing framework to run in browser",
-  "main": "index.js",
+  "main": "dist/latte.min.js",
   "scripts": {
+    "build": "minify index.js > dist/latte.min.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/ludekarts/latte/issues"
   },
-  "homepage": "https://github.com/ludekarts/latte#readme"
+  "homepage": "https://github.com/ludekarts/latte#readme",
+  "devDependencies": {
+    "minify": "^11.4.1"
+  }
 }

@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Use Spies</title>
 
+    <style>
+      code {
+        background-color: lightblue;
+        display: inline-block;
+        padding: 0 0.2em;
+      }
+    </style>
+
     <!-- In order to use chaiSpies we disable Latte chai support -->
     <script type="module">
       import chai from "https://cdn.jsdelivr.net/npm/chai@4.3.10/+esm";
@@ -16,13 +24,13 @@
   <body>
     <p>
       📒 Note: to use <code>chai-spies</code> we disabled Latte chai support,
-      and added own wersion of chai & chai-spies → see source code.
+      and added own version of chai & chai-spies → see source code.
     </p>
     <script
       type="module"
       data-chai="false"
       src="../../index.js"
-      data-latte="./spy.test.js"
+      data-latte-tests="./spy.test.js"
     ></script>
   </body>
 </html>
