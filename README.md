@@ -9,7 +9,7 @@ Super-minimalistic testing framework to run in browser.
    <script
      type="module"
      data-latte-test="./my.test.js"
-     src="https://unpkg.com/@ludekarts/latte@1.0.0/dist/latte.min.js"
+     src="https://unpkg.com/@ludekarts/latte@1.0.1/dist/latte.min.js"
    ></script>
    ```
 1. Install with NPM
@@ -53,7 +53,7 @@ describe("Sample tests", () => {
 });
 ```
 
-To run **only** one test case follw code below:
+To run **only** one test case follow code below:
 
 ```
 only.it("Should run only this one", () => {
@@ -63,11 +63,11 @@ only.it("Should run only this one", () => {
 
 # HTML API
 
-Script tag gets followign attributes
+Script tag gets following attributes:
 
-| Attribute       | Value                 | Required | Description                                                    |
-| --------------- | --------------------- | :------: | -------------------------------------------------------------- |
-| type            | module                |    ✔️    | Allows for ESM imports in JS code                              |
-| src             | path/to/latte.js      |    ✔️    | URL to Latte.js                                                |
-| data-latte-test | path/to/spec.js       |    ✔️    | URL to yotu tests                                              |
-| data-chai       | path/to/chai.js false |    ➖    | Path to Chai library, or false to disbale default chai loading |
+| Attribute       | Value                 | Required | Description                                                      |
+| --------------- | --------------------- | :------: | ---------------------------------------------------------------- |
+| type            | module                |    ✔️    | Allows for run and import ESM in JS code                         |
+| src             | path/to/latte.js      |    ✔️    | URL to Latte.js                                                  |
+| data-latte-test | path/to/spec.js       |    ✔️    | URL to tests file                                                |
+| data-chai       | path/to/chai.js false |    ➖    | Path to Chai library, or "false" to disbale default chai loading |
