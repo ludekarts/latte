@@ -1,6 +1,6 @@
 {
-  "name": "latte",
-  "version": "1.0.0",
+  "name": "@ludekarts/latte",
+  "version": "1.0.1",
   "description": "Super-minimalistic testing framework to run in browser",
   "main": "dist/latte.min.js",
   "scripts": {

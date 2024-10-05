@@ -2,6 +2,29 @@
 
 Super-minimalistic testing framework to run in browser.
 
+# Install
+
+1. Use UNPKG as a source
+   ```
+   <script
+     type="module"
+     data-latte-test="./my.test.js"
+     src="https://unpkg.com/@ludekarts/latte@1.0.0/dist/latte.min.js"
+   ></script>
+   ```
+1. Install with NPM
+
+   ```
+   npm install @ludekarts/latte
+   . . .
+
+   <script
+     type="module"
+     data-latte-test="./my.test.js"
+     src="../node_modules/@ludekarts/latte/dist/latte.min.js"
+   ></script>
+   ```
+
 # Usage
 
 On **📝 test.html** include below

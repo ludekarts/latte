@@ -43,18 +43,8 @@
   root.only = only;
   root.describe = describe;
 
-  // Load Chai.js and script witch tests.
-  const scriptTag = document.querySelector("script[data-latte-tests]");
-
-  if (!scriptTag) {
-    throw new Error(
-      "LatteError: Cannot find script tag with data-latte-tests attribute"
-    );
-  }
-
-  // If [data-chai] attribute is present it should contains URL to Chai.js,
-  // otherwise Chai.js will be loaded from CDN.
-  const chaiConfig = scriptTag.dataset.chai;
+  // This is a workaround to fix bug with script minification where variables declaration are mixed up
+  const { chaiConfig, latteTests } = getScriptAttributes();
 
   if (!chaiConfig) {
     const chai = await import(CHAI_CDN_URL);
@@ -66,8 +56,8 @@
     window.expect = chai.expect;
   }
 
-  if (scriptTag.dataset.latteTests) {
-    await includeScriptTag(scriptTag.dataset.latteTests);
+  if (latteTests) {
+    await includeScriptTag(latteTests);
   } else {
     throw new Error(
       "LatteError: Cannot find script tag with data-latte-tests attribute"
@@ -83,6 +73,29 @@
 })(window);
 
 // ---- Helpers ----------------
+
+function getScriptAttributes() {
+  // Load Chai.js and script witch tests.
+  const scriptTag = document.querySelector("script[data-latte-tests]");
+
+  if (!scriptTag) {
+    throw new Error(
+      "LatteError: Cannot find script tag with data-latte-tests attribute"
+    );
+  }
+
+  // If [data-chai] attribute is present it should contains URL to Chai.js,
+  // otherwise Chai.js will be loaded from CDN.
+  const chaiConfig = scriptTag.dataset.chai;
+
+  // Get URL for test to load.
+  const latteTests = scriptTag.dataset.latteTests;
+
+  return {
+    chaiConfig,
+    latteTests,
+  };
+}
 
 function pushMessage(message, type) {
   const prompt = document.createElement("div");
