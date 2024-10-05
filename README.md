@@ -8,7 +8,7 @@ Super-minimalistic testing framework to run in browser.
    ```
    <script
      type="module"
-     data-latte-test="./my.test.js"
+     data-latte-tests="./my.test.js"
      src="https://unpkg.com/@ludekarts/latte@1.0.1/dist/latte.min.js"
    ></script>
    ```
@@ -20,7 +20,7 @@ Super-minimalistic testing framework to run in browser.
 
    <script
      type="module"
-     data-latte-test="./my.test.js"
+     data-latte-tests="./my.test.js"
      src="../node_modules/@ludekarts/latte/dist/latte.min.js"
    ></script>
    ```
@@ -33,7 +33,7 @@ On **📝 test.html** include below
 <script
   type="module"
   src="./latte.js"
-  data-latte-test="./my.test.js"
+  data-latte-tests="./my.test.js"
 ></script>
 ```
 
@@ -65,9 +65,9 @@ only.it("Should run only this one", () => {
 
 Script tag gets following attributes:
 
-| Attribute       | Value                 | Required | Description                                                      |
-| --------------- | --------------------- | :------: | ---------------------------------------------------------------- |
-| type            | module                |    ✔️    | Allows for run and import ESM in JS code                         |
-| src             | path/to/latte.js      |    ✔️    | URL to Latte.js                                                  |
-| data-latte-test | path/to/spec.js       |    ✔️    | URL to tests file                                                |
-| data-chai       | path/to/chai.js false |    ➖    | Path to Chai library, or "false" to disbale default chai loading |
+| Attribute        | Value                 | Required | Description                                                      |
+| ---------------- | --------------------- | :------: | ---------------------------------------------------------------- |
+| type             | module                |    ✔️    | Allows for run and import ESM in JS code                         |
+| src              | path/to/latte.js      |    ✔️    | URL to Latte.js                                                  |
+| data-latte-tests | path/to/spec.js       |    ✔️    | URL to tests file                                                |
+| data-chai        | path/to/chai.js false |    ➖    | Path to Chai library, or "false" to disbale default chai loading |
