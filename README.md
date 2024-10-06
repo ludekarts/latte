@@ -1,5 +1,7 @@
 # Latte
 
+![latte.js-logo](./assets/latte.svg)
+
 Super-minimalistic testing framework to run in browser.
 
 # Install
@@ -9,7 +11,7 @@ Super-minimalistic testing framework to run in browser.
    <script
      type="module"
      data-latte-tests="./my.test.js"
-     src="https://unpkg.com/@ludekarts/latte@1.0.1/dist/latte.min.js"
+     src="https://unpkg.com/@ludekarts/latte/dist/latte.min.js"
    ></script>
    ```
 1. Install with NPM
