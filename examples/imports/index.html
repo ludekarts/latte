@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Use Spies</title>
+    <title>Latte multiple imports tests</title>
 
     <style>
       code {
@@ -13,25 +13,25 @@
       }
     </style>
 
-    <!-- In order to use chaiSpies we disable Latte's Chai support -->
     <script type="module">
       import chai from "https://cdn.jsdelivr.net/npm/chai@4.3.10/+esm";
       import chaiSpies from "https://cdn.jsdelivr.net/npm/chai-spies@1.1.0/+esm";
       chai.use(chaiSpies);
+
       window.chai = chai;
       window.expect = chai.expect;
     </script>
   </head>
   <body>
     <p>
-      📒 Note: to use <code>chai-spies</code> we disabled Latte's Chai support,
-      and added custom loading script for chai & chai-spies → see source code.
+      This example shows how to combine tests from multiple files and how to
+      combine them with asynchronous chai imports.
     </p>
     <script
       type="module"
       data-chai="false"
       src="../../index.js"
-      data-latte-tests="./spy.test.js"
+      data-latte-tests="./imports.test.js"
     ></script>
   </body>
 </html>

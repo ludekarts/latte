@@ -72,4 +72,5 @@ Script tag gets following attributes:
 | type             | module                |    ✔️    | Allows for run and import ESM in JS code                         |
 | src              | path/to/latte.js      |    ✔️    | URL to Latte.js                                                  |
 | data-latte-tests | path/to/spec.js       |    ✔️    | URL to tests file                                                |
+| data-preload     | functionName          |    ➖    | Name of the function on global Window object to run before tests |
 | data-chai        | path/to/chai.js false |    ➖    | Path to Chai library, or "false" to disbale default chai loading |
