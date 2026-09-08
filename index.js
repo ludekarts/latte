@@ -57,19 +57,15 @@
   }
 
   if (latteTests) {
-    await includeScriptTag(latteTests);
+    await importTestModule(latteTests);
   } else {
     throw new Error(
-      "LatteError: Cannot find script tag with data-latte-tests attribute"
+      "LatteError: Cannot find script tag with data-latte-tests attribute",
     );
   }
 
-  // Run tests.
-  setTimeout(
-    () =>
-      (onlyQueue.length ? onlyQueue : queue).forEach((callback) => callback()),
-    100
-  );
+  // Run tests after the test module and all of its dependencies have evaluated.
+  (onlyQueue.length ? onlyQueue : queue).forEach((callback) => callback());
 })(window);
 
 // ---- Helpers ----------------
@@ -80,7 +76,7 @@ function getScriptAttributes() {
 
   if (!scriptTag) {
     throw new Error(
-      "LatteError: Cannot find script tag with data-latte-tests attribute"
+      "LatteError: Cannot find script tag with data-latte-tests attribute",
     );
   }
 
@@ -105,14 +101,10 @@ function pushMessage(message, type) {
   document.body.append(prompt);
 }
 
-function includeScriptTag(path) {
-  return new Promise((resolve, reject) => {
-    if (!path) reject("Cannot find path to test file");
-    const script = document.createElement("script");
-    script.setAttribute("src", path);
-    script.setAttribute("type", "module");
-    script.addEventListener("load", resolve);
-    script.addEventListener("error", reject);
-    document.head.appendChild(script);
-  });
+async function importTestModule(path) {
+  if (!path) {
+    throw new Error("LatteError: Cannot find path to test file");
+  }
+
+  await import(path);
 }
